@@ -37,7 +37,7 @@ class PicturesController < ApplicationController
 	      :url    => "http://monicao.s3.amazonaws.com/bitmaker/girl.jpg"
 	    }
 	  ]
-	  @picture = @pictures[params[:id].to_i]
+	  @picture = @pictures[params[:id].to_i-1]
 	end
 
 	def new
