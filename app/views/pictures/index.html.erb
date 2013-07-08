@@ -1,7 +1,7 @@
 <h1>YoyoyoyoHo!</h1>
 
 <h3>You have <%= @pictures.length %> pictures in your library.</h3>
-<%= link_to "Make a New Picture", "/pictures/new" %>
+<%= link_to "Make a New Picture", new_picture_path %>
 
 <% @pictures.each do |picture| %>
 	<p><strong><%= picture[:title] %></strong> by <%= picture[:artist] %></p>
