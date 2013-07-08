@@ -8,4 +8,5 @@ Photogur2::Application.routes.draw do
 
   get 'pictures/:id' => 'pictures#show', as: "dragon"
 
+  get 'pictures/:id/edit' => 'pictures#edit'
 end
