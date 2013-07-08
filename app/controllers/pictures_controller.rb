@@ -1,10 +1,16 @@
 class PicturesController < ApplicationController
+		
+	before_filter :get_pic, :except => [:index, :new] 
+
+	def get_pic
+			@picture = Picture.find(params[:id])	
+	end
+
 	def index
 		@pictures = Picture.all.reverse
 	end
 
 	def show
-		@picture = Picture.find(params[:id])
 		# Picture is a class, need a method to find the data(using .find here)
 	end
 
@@ -24,16 +30,19 @@ class PicturesController < ApplicationController
 	end
 
 	def edit
-		@picture = Picture.find(params[:id])
 	end
 
 	def update
-		@picture = Picture.find(params[:id])
 		if @picture.update_attributes(params[:picture])
 			redirect_to @picture
 		else
 			render :edit
 		end
+	end
+
+	def destroy
+		@picture.destroy
+		redirect_to pictures_path
 	end
 
 end
