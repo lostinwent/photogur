@@ -1,10 +1,11 @@
 class PicturesController < ApplicationController
 	def index
-		@pictures = Picture.all
+		@pictures = Picture.all.reverse
 	end
 
 	def show
 		@picture = Picture.find(params[:id].to_i)
+		# Picture is a class, need a method to find the data(using .find here)
 	end
 
 	def new
