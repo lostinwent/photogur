@@ -1,4 +1,5 @@
 <p><strong><%= @picture[:title] %></strong> by <%= @picture[:artist] %></p>
 <img src="<%= @picture[:url] %>">
 <br>
-<%= link_to "Back to Future!", "/pictures" %>
+
+<%= link_to "Back to Future!", "/pictures" %> | <%= link_to "Edit", edit_picture_path(@picture) %>

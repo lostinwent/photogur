@@ -4,7 +4,7 @@ class PicturesController < ApplicationController
 	end
 
 	def show
-		@picture = Picture.find(params[:id].to_i)
+		@picture = Picture.find(params[:id])
 		# Picture is a class, need a method to find the data(using .find here)
 	end
 
@@ -24,6 +24,16 @@ class PicturesController < ApplicationController
 	end
 
 	def edit
+		@picture = Picture.find(params[:id])
+	end
+
+	def update
+		@picture = Picture.find(params[:id])
+		if @picture.update_attributes(params[:picture])
+			redirect_to @picture
+		else
+			render :edit
+		end
 	end
 
 end

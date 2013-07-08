@@ -5,5 +5,5 @@
 
 <% @pictures.each do |picture| %>
 	<p><strong><%= picture[:title] %></strong> by <%= picture[:artist] %></p>
-	<%= link_to image_tag(picture[:url]), "/pictures/#{picture.id}" %>
+	<%= link_to image_tag(picture[:url]), picture_url(picture) %>
 <% end %>
