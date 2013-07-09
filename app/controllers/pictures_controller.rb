@@ -34,7 +34,7 @@ class PicturesController < ApplicationController
 
 	def update
 		if @picture.update_attributes(params[:picture])
-			redirect_to @picture
+			redirect_to picture_path(@picture)
 		else
 			render :edit
 		end
